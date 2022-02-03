@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article>
+      <h3></h3>
+      <img src="" alt="" />
+      <p>Type:</p>
+      <p>Levested:</p>
+    </article>
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+      function start() {
+        console.log("DOM er loaded");
+      }
+      const dyr = {
+        navn: "Gris",
+        type: "Pattedyr",
+        levested: "Svinefarme",
+        billede: "http://mabe-kea.dk/E19/pics/pig.png",
+      };
+      console.log(dyr);
+      const artikel = document.querySelector("article");
+      console.log(artikel);
+
+      //artikel.textContent = `Navn: ${dyr.navn} Type: ${dyr.type} Levested: ${dyr.levested}`;
+
+      let billede = document.createElement("img");
+
+      /*billede.src = "http://mabe-kea.dk/E19/pics/pig.png”";
+
+      artikel.appendChild(billede);
+      mainSection.appendChild(artikel);*/
+      artikel.querySelector("h3").textContent = dyr.navn;
+      artikel.querySelector("img").src = dyr.billede;
+      artikel.querySelector("p").textContent = "Type: " + dyr.type;
+      artikel.querySelector("p + p").textContent = "Levested: " + dyr.levested;
+    </script>
+  </body>
+</html>
